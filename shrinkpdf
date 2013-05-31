@@ -1,0 +1,21 @@
+#!/bin/bash
+
+gs  -dNOPAUSE -dBATCH -dSAFER \
+    -sDEVICE=pdfwrite \
+    -dCompatibilityLevel=1.5 \
+    -dPDFSETTINGS=/screen \
+    -dEmbedAllFonts=true \
+    -dSubsetFonts=true \
+    -dCompressFonts=true \
+    -dConvertCMYKImagesToRGB=true \
+    -dDownsampleColorImages=true \
+    -dDownsampleGrayImages=true \
+    -dDownsampleMonoImages=true \
+    -dColorImageDownsampleType=/Bicubic \
+    -dColorImageResolution=100 \
+    -dGrayImageDownsampleType=/Bicubic \
+    -dGrayImageResolution=100 \
+    -dMonoImageDownsampleType=/Bicubic \
+    -dMonoImageResolution=100 \
+    -sOutputFile=$2 \
+     $1

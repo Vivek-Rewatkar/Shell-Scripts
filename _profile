@@ -1,0 +1,50 @@
+## --------------------------------------------------------------
+## Prompt
+## --------------------------------------------------------------
+export PS1="\[\033[0;35m\]\u@\H\n\[\033[0;32m\][\w] \$ \[\033[0m\]"
+export CLICOLOR=1
+
+## --------------------------------------------------------------
+## Welcome Msg
+## --------------------------------------------------------------
+
+fortune | cowsay
+
+## --------------------------------------------------------------
+## Extending Paths
+## --------------------------------------------------------------
+
+# personal bin folder
+export PATH=$PATH:~/bin
+# use php from mamp
+export PATH=/Applications/MAMP/bin/php/php5.4.4/bin:$PATH
+
+## --------------------------------------------------------------
+## Aliasses
+## --------------------------------------------------------------
+
+alias flushdns="sudo killall -HUP mDNSResponder"
+alias ll='ls -lisah'
+alias ..='cd ..'
+alias cd..='cd ..'
+alias sd='sudo'
+
+## --------------------------------------------------------------
+## Exports
+## --------------------------------------------------------------
+
+# i know how to save in emacs ^_^
+export EDITOR="emacs"
+#osx color terminal
+export CLICOLOR=1
+# don't put duplicate lines in the history. See bash(1) for more options
+# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize

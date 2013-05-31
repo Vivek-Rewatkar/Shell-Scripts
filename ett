@@ -1,0 +1,4 @@
+#!/bin/sh
+
+afplay /System/Library/Sounds/Glass.aiff
+terminal-notifier -title 'The Emergent Task Timer' -subtitle 'See where your time is going!' -message "List activities you should do."
