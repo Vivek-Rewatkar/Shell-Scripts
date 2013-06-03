@@ -12,10 +12,10 @@ gs  -dNOPAUSE -dBATCH -dSAFER \
     -dDownsampleGrayImages=true \
     -dDownsampleMonoImages=true \
     -dColorImageDownsampleType=/Bicubic \
-    -dColorImageResolution=100 \
+    -dColorImageResolution=150 \
     -dGrayImageDownsampleType=/Bicubic \
-    -dGrayImageResolution=100 \
+    -dGrayImageResolution=150 \
     -dMonoImageDownsampleType=/Bicubic \
-    -dMonoImageResolution=100 \
+    -dMonoImageResolution=150 \
     -sOutputFile=$2 \
      $1
