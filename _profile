@@ -30,6 +30,11 @@ alias cd..='cd ..'
 alias sd='sudo'
 alias mybin='subl ~/bin'
 
+# SSH-SErver
+
+alias ra='ssh admin@ra.local'
+alias janiu='ssh bis@janiu.bench'
+
 ## --------------------------------------------------------------
 ## Exports
 ## --------------------------------------------------------------
