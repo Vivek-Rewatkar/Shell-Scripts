@@ -1,7 +1,18 @@
 ## --------------------------------------------------------------
+## GIT
+## --------------------------------------------------------------
+
+function parse_git_info {
+    branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/')
+    if [ -n "$branch" ]; then
+      echo "$branch" | tr -d '\n' && [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+    fi
+}
+
+## --------------------------------------------------------------
 ## Prompt
 ## --------------------------------------------------------------
-export PS1="\[\033[0;35m\]\u@\H\n\[\033[0;32m\][\w] \$ \[\033[0m\]"
+export PS1="\[\033[0;35m\]\u@\H\n\[\033[0;32m\][\w]\[\033[0m\]\[\033[1;36m\]\$(parse_git_info) \[\033[0;32m\]\$ \[\033[0m\]"
 export CLICOLOR=1
 
 ## --------------------------------------------------------------
@@ -29,8 +40,21 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias sd='sudo'
 alias mybin='subl ~/bin'
+alias refresh='clear && source ~/.profile'
 
-# SSH-SErver
+## --------------------------------------------------------------
+## Aliasses // git
+## --------------------------------------------------------------
+
+alias gl='git log --date=short --pretty=format:"%C(bold yellow)%h %C(bold green)%ad %C(reset)%s %C(bold blue)[%an]%C(bold red)%d" && echo '
+alias gg='git log --all --date=short --format=format:"%C(bold yellow)%h %C(bold green)%ad %C(reset)%s %C(bold blue)[%an]%C(bold red)%d" --graph && echo '
+alias gs='git status'
+alias gc='git commit -m'
+alias gca='git add . && git commit -m'
+alias gb='git branch'
+
+
+# SSH-Server
 
 alias ra='ssh admin@ra.local'
 alias janiu='ssh bis@janiu.bench'
