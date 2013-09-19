@@ -40,7 +40,7 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias sd='sudo'
 alias mybin='subl ~/bin'
-alias refresh='clear && source ~/.profile'
+alias fresh='clear && source ~/.profile'
 
 ## --------------------------------------------------------------
 ## Aliasses // git
